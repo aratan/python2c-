@@ -1,62 +1,63 @@
 
 
-# Python to C++ Converter
+# Python 2 C++
 
-## Transforma tu Código Python en C++ con la Potencia de la IA
+Conversor de código Python a C++ usando inteligencia artificial (Phi-4 O1 via Ollama), con interfaz web en Gradio.
 
-¿Estás cansado de pasar horas traduciendo manualmente tu código Python a C++? ¿Necesitas optimizar tus aplicaciones para un rendimiento superior? ¡Tenemos la solución perfecta para ti! Nuestra aplicación **Python to C++ Converter** utiliza inteligencia artificial avanzada para convertir automáticamente tu código Python a C++, ahorrándote tiempo y esfuerzo.
+## Cómo funciona
 
-## ¿Por Qué Elegir Nuestra Aplicación?
+1. **Pega tu código Python** en el cuadro de texto.
+2. **Pulsa Convert** y el modelo de Ollama traduce el código.
+3. **Recibe el resultado** listo para compilar en C++.
 
-### 1. **Ahorra Tiempo y Dinero**
-   - **Eficiencia**: Convierte tu código en segundos, no en horas.
-   - **Automatización**: Olvídate de la tediosa tarea de traducir línea por línea.
+La aplicación genera solo el código C++, sin texto envolvente ni comentarios.
 
-### 2. **Optimización de Rendimiento**
-   - **Velocidad**: C++ es conocido por su rendimiento superior. Optimiza tus aplicaciones para que funcionen más rápido.
-   - **Eficiencia**: Aprovecha las ventajas de C++ en aplicaciones que requieren alto rendimiento.
+## Requisitos
 
-### 3. **Precisión y Confiabilidad**
-   - **IA Avanzada**: Nuestra tecnología de IA garantiza una conversión precisa y confiable.
-   - **Soporte Continuo**: Actualizaciones regulares para mejorar la precisión y el rendimiento.
+- **Python** 3.9+
+- **Ollama** (http://localhost:11434)
+- **Modelo** `aratan/phi4-o1:latest`
 
-## Ejemplos de la Vida Real
+### Instalar el modelo
 
-### Ejemplo 1: Análisis de Datos
-   - **Problema**: Tienes un script de Python que realiza análisis de datos, pero necesitas que funcione más rápido para manejar grandes volúmenes de datos.
-   - **Solución**: Convierte tu script de Python a C++ y observa cómo se reduce el tiempo de procesamiento.
+```bash
+ollama pull aratan/phi4-o1:latest
+```
 
-### Ejemplo 2: Desarrollo de Juegos
-   - **Problema**: Estás desarrollando un juego en Python, pero necesitas mejorar el rendimiento para una experiencia de usuario más fluida.
-   - **Solución**: Usa nuestra aplicación para convertir tu código de Python a C++ y disfruta de un juego más rápido y eficiente.
+## Instalación
 
-### Ejemplo 3: Aplicaciones Científicas
-   - **Problema**: Tienes una aplicación científica en Python que realiza cálculos complejos, pero necesitas optimizar su rendimiento.
-   - **Solución**: Convierte tu aplicación a C++ y aprovecha la velocidad y eficiencia de este lenguaje.
+```bash
+git clone <repository-url>
+cd python2c-
+# o si ya tenés clonado
+cp README.md.bak README.md
+pip install ollama gradio
+python conco.py
+```
 
-## Cómo Empezar
+La aplicación se lanza automáticamente en [http://localhost:7860](http://localhost:7860).
 
-1. **Instalación**: Descarga e instala nuestra aplicación desde [nuestro sitio web](#).
-2. **Configuración**: Sigue las instrucciones de configuración para integrar la aplicación con tu entorno de desarrollo.
-3. **Conversión**: Sube tu código Python y deja que la IA haga el resto.
+## Funciones
+
+- **`Model`** — Representación de modelo cargado por Ollama
+- **`Model.generate(prompt)`** — Devuelve `Response` con la conversión
+- **`Response(text)`** — Respuesta que envuelve el código C++
+- **`load_model(model_name)`** — Carga `phi4-o1` (actualizable con modelo custom)
+- **`convert_python_to_cpp(python_code)`** — Conversor principal, usa la API de ollama para generar la respuesta en formato `cpp_code`
+
+## Estructura
+
+```
+python2c-
+├── README.md
+├── LICENSE
+└── conco.py       # Aplicación Gradio
+```
 
 ## Contacto
 
-¿Tienes preguntas o necesitas soporte? No dudes en contactarnos:
+**Correo:** [victor.arbiol@gmail.com](mailto:victor.arbiol@gmail.com)
 
-- **Correo Electrónico**: victor.arbiol@gmail.com
-- **Sitio Web**: [Nuestro Sitio Web](#)
+---
 
-## Testimonios
-
-> "Esta aplicación ha revolucionado nuestro flujo de trabajo. Ahora podemos convertir nuestro código Python a C++ en cuestión de segundos, lo que nos ha permitido optimizar nuestras aplicaciones y mejorar el rendimiento." - Juan Pérez, Desarrollador Senior
-
-> "La precisión y la velocidad de la conversión son impresionantes. Definitivamente recomendaría esta aplicación a cualquier desarrollador que busque optimizar su código." - María López, Ingeniera de Software
-
-## Conclusión
-
-No dejes que la conversión manual de código te frene. Con **Python to C++ Converter**, puedes transformar tu código Python en C++ de manera rápida y eficiente, ahorrando tiempo y mejorando el rendimiento de tus aplicaciones. ¡Pruébalo hoy mismo y descubre la diferencia!
-
-Mejoramos el rendimiento 4.0 seg a 0.136 seg
-
-![image](https://github.com/user-attachments/assets/27821f40-21ec-4a3b-8006-f68c31af2288)
+Rendimiento mejorado: ~4s → 0.136s por conversión.
