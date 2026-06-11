@@ -142,7 +142,7 @@ def convert_python_to_cpp(python_code):
 Provide only the C++ code with no surrounding text or comments. Do not include any explanations before or after the code. The output should be pure C++ code ready to compile."""
     
     def conversion_task():
-        response = client.generate(model="aratan/phi4-o1:latest", prompt=prompt)
+        response = client.generate(model="aratan/qwen3.5-uncensored:9b", prompt=prompt)
         if response:
             cpp_code = response['response'].strip("` ``")
             print(f'Conversion result: {cpp_code}')
